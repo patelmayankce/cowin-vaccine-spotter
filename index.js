@@ -66,7 +66,7 @@ const findSlot = async () => {
 }
 
 findSlot();
-const job = new CronJob('10 * * * * *', async () => {
+const job = new CronJob('*/10 * * * * *', async () => {
     await findSlot();
 }, null, true, 'America/Los_Angeles');
 
