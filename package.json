@@ -1,0 +1,25 @@
+{
+  "name": "cowin-vaccine-spotter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patelmayankce/cowin-vaccine-spotter.git"
+  },
+  "author": "Mayank Patel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patelmayankce/find-vaccine-slote/issues"
+  },
+  "homepage": "https://github.com/patelmayankce/find-vaccine-slote#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cron": "^1.8.2",
+    "play-sound": "^1.1.3"
+  }
+}
