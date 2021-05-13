@@ -13,7 +13,7 @@ axios.defaults.headers = {
     'Authorization': authorization.indexOf('Bearer') === -1 ? `Bearer ${authorization}` : authorization,
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36'
 };
-const url = `https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict?district_id=${distId}&date=${date}`;
+const url = authorization ? `https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict?district_id=${distId}&date=${date}` : `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=${distId}&date=${date}`;
 
 const findSlot = async () => {
     try {
