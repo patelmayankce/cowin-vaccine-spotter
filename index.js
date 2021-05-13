@@ -30,10 +30,10 @@ const findSlot = async () => {
                     if (s.available_capacity > 0) {
                         const centerDetail = JSON.parse(JSON.stringify(c));
                         delete centerDetail.sessions;
-                        result[`plus_${s.min_age_limit}`] = {
+                        result[`plus_${s.min_age_limit}`].push({
                             ...s,
                             ...centerDetail,
-                        }
+                        });
                         console.log("******************************");
                         console.log("Center Name : " + c.name);
                         console.log("Center Address : " + c.address);
