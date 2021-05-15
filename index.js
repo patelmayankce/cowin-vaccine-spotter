@@ -1,11 +1,12 @@
 const player = require('play-sound')(opts = {})
+const ncp = require("copy-paste");
 
 const CronJob = require('cron').CronJob;
 const axios = require('axios').default;
 
 const authorization = '';
 const distId = 770;
-const date = '13-05-2021';
+const date = '15-05-2021';
 axios.defaults.headers = {
     'Cache-Control': 'no-cache',
     'Pragma': 'no-cache',
@@ -34,6 +35,11 @@ const findSlot = async () => {
                             ...s,
                             ...centerDetail,
                         });
+                        if (s.available_capacity > 10) {
+                            ncp.copy(c.name, () => {
+
+                            });
+                        }
                         console.log("******************************");
                         console.log("Center Name : " + c.name);
                         console.log("Center Address : " + c.address);
@@ -66,7 +72,7 @@ const findSlot = async () => {
 }
 
 findSlot();
-const job = new CronJob('*/10 * * * * *', async () => {
+const job = new CronJob('*/5 * * * * *', async () => {
     await findSlot();
 }, null, true, 'America/Los_Angeles');
 
